@@ -15,6 +15,8 @@ public class Player {
     private int maxhealth;
     private int damage;
     private int attack;
+    private boolean recoveryAttempt;
+    
     
     public Player(int level, int health, int damage, int attack){
         this.level=level;
@@ -24,37 +26,47 @@ public class Player {
         this.maxhealth=health;
     }
    
+    
     public void setLevel(){
         this.level++;
     }
+    
     public void setHealth(int h){
         this.health+=h;
     }
+    
     public void setNewHealth(int h){
         this.health=h;
     }
-    public void setDamage(int d){
+    
+    public void setDamage(int d){ 
         this.damage+=d;
     }
+    
     public void setAttack(int a){
         this.attack=a;
     }
-    public void setMaxHealth(int h){
+    
+    public void setMaxHealth(int h){ 
         this.maxhealth+=h;
     }
     
     public int getLevel(){
         return this.level;
     }
+    
     public int getHealth(){
         return this.health;
     }
+    
     public int getDamage(){
         return this.damage;
     }
+    
     public int getAttack(){
         return this.attack;
     }
+    
     public int getMaxHealth(){
         return this.maxhealth;
     }
@@ -63,4 +75,12 @@ public class Player {
         return "";
     }
     
+    public void SetRecoveryAttempt(boolean recovery){
+        this.recoveryAttempt = recovery;
+    }
+    
+    public boolean getRecoveryAttempt(){
+        return this.recoveryAttempt;
+    }
+   
 }

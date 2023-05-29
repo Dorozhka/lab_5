@@ -10,6 +10,7 @@ package zadorozhko.mortalkombatbversion;
  */
 public class ShaoKahn extends Player{
     
+    
     public ShaoKahn(int level, int health, int  damage, int attack){
         super (level, health, damage, attack);
     }
@@ -18,4 +19,23 @@ public class ShaoKahn extends Player{
     public String getName(){
         return "Shao Kahn";
     }
+    
+
+    public void changeHealthAttemptRes(int a, int possibleDamage) {
+        
+        if(a==0)
+        {
+            int expectedHealth =(int) (this.getHealth() + (this.getMaxHealth() -  this.getHealth()) * 0.5);
+            this.setNewHealth(expectedHealth);  
+        }
+        
+        if(a==1)
+        {
+            int expectedHealth = this.getHealth() - possibleDamage*2;
+            if(expectedHealth >= 0){
+                this.setNewHealth(expectedHealth);
+            }else{this.setNewHealth(0);}
+        }   
+    }
+    
 }

@@ -9,13 +9,13 @@ import javax.swing.JProgressBar;
 import javax.swing.JRadioButton;
 
 /**
+ * Класс для изменения текста в окне игры JFrame
  *
  * @author Мария
  */
 public class ChangeTexts {
 
-
-
+    
     public void NewRoundTexts(Player human, Player enemy, JProgressBar pr1,
             JProgressBar pr2, JLabel label, JLabel label2, JLabel label3,
             JLabel label4, JLabel label5, JLabel label6, JLabel label7, JLabel label8, JLabel label9,
@@ -29,17 +29,14 @@ public class ChangeTexts {
         label7.setText(Integer.toString(human.getDamage()));
         if (i % 2 == 1) {
             label8.setText("Your turn");
+        } else {
+            label8.setText(enemy.getName() + "'s turn");
         }
-        else{
-            label8.setText(enemy.getName()+"'s turn");
-        }
-        /*rb1.setText(items[0].getName()+", "+items[0].getCount()+" шт");
-        rb2.setText(items[1].getName()+", "+items[1].getCount()+" шт");
-        rb3.setText(items[2].getName()+", "+items[2].getCount()+" шт");*/
         BagText(items, rb1, rb2, rb3);
         label9.setText("");
     }
 
+    
     public void RoundTexts(Player human, Player enemy, JLabel label, JLabel label2, int i, JLabel label3) {
         if (enemy.getHealth() >= 0) {
             label.setText(Integer.toString(enemy.getHealth()) + "/" + Integer.toString(enemy.getMaxHealth()));
@@ -53,25 +50,24 @@ public class ChangeTexts {
         }
         if (i % 2 == 1) {
             label3.setText("Your turn");
-        }
-        else{
-            label3.setText(enemy.getName()+"'s turn");
+        } else {
+            label3.setText(enemy.getName() + "'s turn");
         }
     }
-    
-    public void EndGameText(Human human, JLabel label){
-        if(human.getWin()==12){
+
+    public void EndGameText(Human human, JLabel label) {
+        if (human.getWin() == 12) {
             label.setText("Победа на вашей стороне");
-        }
-        else {
+        } else {
             label.setText("Победа не на вашей стороне");
         }
     }
+
     
-    public void BagText( Items[] items, JRadioButton rb1, JRadioButton rb2, JRadioButton rb3){
-        rb1.setText(items[0].getName()+", "+items[0].getCount()+" шт");
-        rb2.setText(items[1].getName()+", "+items[1].getCount()+" шт");
-        rb3.setText(items[2].getName()+", "+items[2].getCount()+" шт");
+    public void BagText(Items[] items, JRadioButton rb1, JRadioButton rb2, JRadioButton rb3) {
+        rb1.setText(items[0].getName() + ", " + items[0].getCount() + " шт");
+        rb2.setText(items[1].getName() + ", " + items[1].getCount() + " шт");
+        rb3.setText(items[2].getName() + ", " + items[2].getCount() + " шт");
     }
 
 }
